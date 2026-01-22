@@ -1,0 +1,6 @@
+@EcoleAndoharanofotsy_HostAddress = http://localhost:5083
+
+GET {{EcoleAndoharanofotsy_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,8 @@
+# Fichiers binaires et build
+EcoleAndoharanofotsy/bin/
+EcoleAndoharanofotsy/obj/
+
+
+
+# Fichiers utilisateur Visual Studio
+*.vs

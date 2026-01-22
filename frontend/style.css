@@ -1,0 +1,45 @@
+#carteid {
+    min-height: 91dvh;
+}
+#menu_slide {
+    padding: 1rem;
+}
+.menu{
+    position: absolute;
+    z-index: 999;
+    width: 15rem;
+    padding: 5px;
+    background-color: white;
+    top: 0;
+    transform: translatex(-100%);
+    min-height: 95dvh;
+    transition: 0.7s ease-in-out;
+}
+.menu2{
+    /* border-radius: 11px; */
+    position: absolute;
+    z-index: 999;
+    width: 15rem;
+    padding: 5px;
+    background-color: white;
+    top: 0;
+    left: 0;
+    transition: 0.5s ease-in;
+    min-height: 95dvh;
+}
+
+.element{
+    border: 1px solid;
+    border-radius: 11px;
+}
+.img {
+    /* border: 1px solid; */
+}
+.info {
+    /* border: 1px solid; */
+}
+.sous-menu:hover{
+    cursor: pointer;
+    background-color: whitesmoke;
+    border-radius: 11px;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="carte.css">
+
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="assets/js/angular-1.8.2/angular.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div ng-controller="MainController">
+        <!-- la carte -->
+        <div id="carteid" class=""></div>
+
+        <!-- formulaire insertion -->
+        <div ng-show="showInsert" id="formulaire" >
+            <form id="form_insert" ng-submit="insert_ecole(nom, typeEtablissement)" style="background-color: white;border-radius: 10%;padding: 2%;text-align: center;">
+                <p><input type="text" ng-model="nom" placeholder="Nom de l'établissement..."></p>
+                <p><input type="text" ng-model="typeEtablissement" placeholder="Type d'établissement..."></p>
+                <div ng-repeat="cat in categorie">
+                    <label for="">  
+                        <input type="checkbox" ng-model="cat.selected">{{cat.name}}
+                    </label>
+                </div>
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div>
+
+        <!-- formulaire de modification-->
+        <div ng-show="showUpdate" id="formulaire">
+            <form id="form_insert" ng-submit="update_ecole(nom, typeEtablissement)" style="background-color: white;border-radius: 10%;padding: 2%;text-align: center;">
+                <p><input type="text" ng-model="nom" placeholder="Nom de l'établissement..." ></p>
+                <p><input type="text" ng-model="typeEtablissement" placeholder="Type d'établissement..."></p>
+                <div ng-repeat="cat in categorieActu">
+                    <label for="">  
+                        <input type="checkbox" ng-model="cat.selected">{{cat.name}}
+                    </label>
+                </div>
+                <input type="submit" value="Modifier">
+                <button type="button" ng-click="delete()">Supprimer</button>
+            </form>
+        </div>
+
+
+        <!-- information des ecoles -->
+        <div id="info_container" ng-show="showInfo" style="background-color: white;border-radius: 10%;padding: 2%;"> 
+            <h6>Nom</h6>
+            <p id="nom_ecole">{{ecoleTarget.nom}}</p>
+            <h6>Type</h6>
+            <p>{{ecoleTarget.typeEtablissement}}</p>
+            <h6>Liste des niveaux</h6>
+            <div ng-repeat="cat in ecoleTarget.categorieEcole">
+                <p>{{cat.name}}</p>
+            </div>
+        </div>
+
+        <!-- autre -->
+        <div class="row">
+        <div class="menu" id="menu_slide">
+            <div class="container-fluid element mb-3">
+                <form ng-submit="search()">
+                    <p>Recherche par categorie</p>
+                    <div ng-repeat="cat in categorie">
+                        <input type="checkbox" ng-model="cat.selected">{{cat.name}}
+                    </div>
+                    <input type="submit" value="Rechercher">    
+                </form>
+            </div>
+            <div class="container-fluid element mb-3">
+                <p>Recherche par proximité</p>
+                <p>{{message_config}}</p>
+                <button ng-click="waitForMapClick()">Configuration du point</button>
+                <form ng-submit="search_by_proxy(range)" class="mb-3"> 
+                    Rayon(m)<input type="number" step="any" ng-model="range" style="width:100%">
+                    <input type="submit" value="Rechercher">    
+                </form>
+            </div>
+            <button ng-click="get_all_ecole()">Reset</button>
+        </div>
+        <nav class="navbar sticky-bottom navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="menu">Rechercher des ecoles</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+            </div>
+    </div>
+    <script src="app.js"></script>
+    <script src="assets/js/moov.js"></script>
+</body>    
+
+
+</html>

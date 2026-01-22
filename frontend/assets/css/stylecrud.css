@@ -1,0 +1,81 @@
+.bg-red{
+    background-color: #E63E37;
+}
+.color-red{
+    color: #E63E37;
+}
+.bg-gray{
+    background-color: #D3D4CF;
+}
+.bg-dark-gray{
+    background-color: #434343;
+}
+.color-white{
+    color: white !important;
+}
+.color-dark{
+    color: black;
+}
+.brand{
+    color: white;
+}
+.brand-1{
+    color: white;
+    font-weight: bolder;
+}
+.brand-2{
+    color: #E63E37;
+    font-weight: bolder;
+}
+.photo{
+    border-radius: 33px;
+}
+.insert{
+    /* border-radius: 33px; */
+}
+@media (min-width: 992px){
+    .insert{
+        border-radius: 33px;
+    }
+}
+.rounded-33{
+    border-radius: 33px;
+}
+.bouton:hover{
+    background-color: #E63E37;
+    border-color: #E63E37;
+}
+.mt-6{
+    margin-top: 4rem !important;
+}
+@media (min-width: 992px){
+    .mt-lg-6 {
+        margin-top: 4rem !important;
+    }
+}
+.profil{
+    width: 8rem !important;
+    border-radius: 50%;
+}
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus{   
+    border-color: #E63E37;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #E63E37;
+    outline: 0 none !important;
+}
+option{
+    background-color: #D3D4CF;
+}
+select#disabledSelect:focus{
+    border-color: #E63E37;
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 8px #E63E37;
+    outline: 0 none !important;
+}
+option:checked{
+    background-color: transparent !important;
+    /* color: white;     */
+}
+option:enabled{
+    /* background-color: #E63E37; */
+    border-color: #E63E37;
+    /* color: white;     */
+}

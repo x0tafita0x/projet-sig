@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="assets/js/angular-1.8.2/angular.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #carteid {
+            /* height: 100% */
+            width: 50%;
+            float:left;
+        }
+        #form_insert{
+            float: left;
+            z-index:9999999;
+            position:absolute;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div ng-controller="MainController">
+        <div id="carteid" class=""></div>
+        <div ng-show="showInsert">
+            <form id="form_insert" ng-submit="insert_ecole(nom, typeEtablissement)">
+                <p><input type="text" ng-model="nom" placeholder="Nom de l'établissement..."></p>
+                <p><input type="text" ng-model="typeEtablissement" placeholder="Type d'établissement..."></p>
+                <div ng-repeat="cat in categorie">
+                    <label for="">  
+                        <input type="checkbox" ng-model="cat.selected">{{cat.designation}}
+                    </label>
+                </div>
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div>
+    </div>
+    <script src="app2.js"></script>
+</body>    
+
+
+</html>

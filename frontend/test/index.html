@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="assets/js/angular-1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <style type="text/css">
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #carteid {
+            /* height: 100% */
+            width: 100%;
+        }
+
+        .navbar-collapse {
+            margin-left: -1rem;
+            position: absolute;
+            top: auto;
+            bottom: 100%;
+            width: 100%;
+            background-color: white;
+            /* Make sure it matches your navbar's background */
+            transition: 0.5s ease-in;
+        }
+
+        .navbar-collapse.show {
+            /* transform: translateY(-50%); */
+        }
+
+        .navbar-toggler {
+            position: relative;
+            z-index: 1;
+        }
+
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div ng-controller="MainController">
+        <div id="carteid" class="" style="float: left;"></div>
+
+        <!-- a faire -->
+        <div style="display: none; float:right;z-index:9999999;position:absolute" ng-controller="MainController" ng-show="showInsert">
+            <form id="form_insert" ng-submit="insert_ecole(nom,typeEtablissement)">
+                <p><input type="text" ng-model="nom" placeholder="Nom de l'établissement..."></p>
+                <p><input type="text" ng-model="typeEtablissement" placeholder="Type d'établissement..."></p>
+                <div ng-repeat="cat in categorie">
+                    <label for="">  
+                        <input type="checkbox" ng-model="cat.selected">{{cat.designation}}
+                    </label>
+                </div>
+                <input type="submit" value="Enregistrer">
+            </form>
+        </div>
+        <div style="display: none; float:right;z-index:9999999;position:absolute" id="info_container" ng-controller="MainController">
+            <p id="nom_ecole"></p>
+        </div>
+        <!-- a faire  -->
+
+        <div class="menu" id="menu_slide">
+            <div class="container-fluid element mb-3">
+                <div class="row sous-menu p-2">
+                    <div class="col-3 img">
+                        sary
+                    </div>
+                    <div class="col-9 info">
+                        <p>Analakely</p>
+                        <p>a 300 m</p>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid element mb-3">
+                <div class="row sous-menu p-2">
+                    <div class="col-3 img">
+                        sary
+                    </div>
+                    <div class="col-9 info">
+                        Information
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid element mb-3">
+                <div class="row sous-menu p-2">
+                    <div class="col-3 img">
+                        sary
+                    </div>
+                    <div class="col-9 info">
+                        Information
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar sticky-bottom navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
+                    aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 px-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="menu">Restaurant</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="collapse navbar-collapse px-3" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" >Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>    
+<script src="assets/js/moov.js"></script>
+
+</html>

@@ -1,0 +1,155 @@
+.bg-red{
+    background-color: #E63E37;
+}
+.bg-gray{
+    background-color: #D3D4CF;
+}
+.color-white{
+    color: white;
+}
+.color-dark{
+    color: black;
+}
+.mt-6{
+    margin-top: 4rem !important;
+}
+body{
+    /* background: rgb(215,215,215);
+    /* background: linear-gradient(0deg, rgba(215,215,215,1) 0%, rgba(108,108,96,1) 100%); */
+}
+.corps{
+    background-color: #D3D4CF;
+
+}
+.body{
+    min-height: 88vh;
+}
+.detail {
+    /* background-color: #D3D4CF !important; */
+    background-color: transparent !important;
+    border: transparent !important;
+}
+@media (max-width: 576px) {
+    .head{
+        display: flex;
+        justify-content: center;
+    }
+}
+.brand{
+    color: white;
+}
+.brand-1{
+    color: white;
+    font-weight: bolder;
+}
+.brand-2{
+    color: #E63E37;
+    font-weight: bolder;
+}
+.plaque{
+    /* background-color: #D3D4CF; */
+    border-radius: 15px;
+}
+.declanche{
+    background-color: #434343;
+    height: 50%;
+    border-radius: 15px;
+}
+.image{
+    /* box-shadow: 6px 6px 7px 1px; */
+}
+.list{
+    border-radius: 17px;
+    /* border-radius:33px 33px 0 0 ; */
+    /* max-height: 80vh; */
+    min-height: 50vh;
+    overflow-y: scroll;
+    /* background-color: ; */
+    /* scrollbar-width: none; */
+}
+.list::-webkit-scrollbar{
+    display: none;
+}
+.croquis{
+    background-color: #D3D4CF;
+    min-height: 100%;
+}
+.listt{
+    display: flex;
+    justify-content: center;
+}
+.title{
+    background-color: #434343;
+}
+.title div{
+    color: white;
+}
+.colon-1{
+    /* background-color: #CCCCCC; */
+}
+.colon-2{
+    /* background-color: #EBDDBD; */
+}
+.colon-3{
+    /* background-color: #E8E8E8; */
+}
+
+.sub-title{
+    color: black;
+    background-color: #D3D4CF;
+    font-weight: bolder;
+    border-radius: 17px;
+}
+.sub-title button{
+    border-radius: 11px;
+}
+.sub-title .bouton:hover{
+    background-color: #E63E37;
+    border-color: #E63E37;
+}
+.sub-title > .colon-1 > .contenue > .numero:hover{
+    background-color: #E63E37 !important;
+    cursor: pointer;
+}
+.numero{
+    border-radius: 11px;
+    width: 45.78px !important;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+.fond-brand{
+    background-color: whitesmoke;
+    border-radius: 50%;
+}
+.moov{
+    border-radius: 20px;
+    width: 76px;
+    padding: 1px;
+    transition: all 0.5s ease-in-out;
+}
+
+
+.mooved .boule{
+    transform: translateX(100%);
+}
+
+
+.boule{
+    border-radius: 50%;
+    width: 50%;
+    transition: all 0.5s ease-in-out;
+    
+}
+.info{
+    /* background-color: white; */
+    border-radius: 15px;
+}
+.lieu{
+    padding: 5px;
+    color: white;
+    background-color: #6c757d;
+}
+.profil{
+    width: 25px !important;
+}
